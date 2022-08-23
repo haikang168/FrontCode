@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>转换成String类型</title>
+</head>
+<body>
+<script type="text/javascript">
+  // 转换成String方式一：toString()方法
+  // number 转换成 toString()
+  var number = 168;
+  alert(typeof number);
+  number = number.toString();
+  alert(typeof number)
+
+  // boolean 转换 toString()
+  var bool = true;
+  alert(typeof bool);
+  bool = bool.toString();
+  alert(typeof bool);
+
+  // 注意是：null和undefined类型不能直接调用toString方法转换成String 类型否则会报错
+
+  // 方法二：使用String()函数，对于所有数据类型都适用
+  var num2 = 123168;
+  var bool2 = "明天";
+  var null1 = null;
+  var nude = undefined;
+
+  alert(typeof num2);
+  alert(typeof bool2);
+  alert(typeof null1);
+  alert(typeof nude);
+
+  num2 = String(num2);
+  bool = String(bool2);
+  null1 = String(null1);
+  nude = String(nude);
+
+  alert(typeof num2);
+  alert(typeof bool2);
+  alert(typeof null1);
+  alert(typeof nude);
+
+  // 方式三：
+  var num3 = 123168+"12";
+  var bool3 = "明天"+"123";
+  var null2 = null+"a";
+  var nude1 = undefined+"a";
+
+  alert(typeof num3);
+  alert(typeof bool3);
+  alert(typeof null2);
+  alert(typeof nude1);
+
+</script>
+</body>
+</html>
