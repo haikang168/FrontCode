@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>函数定义三种方式</title>
+</head>
+<body>
+<script type="text/javascript">
+  // 定义函数方式一：一般不使用这种方式
+
+  var fun = new Function(" console.log('加油，学习前端!');");
+
+  // 调用函数
+  fun();
+
+  // 判断函数类型
+  alert(typeof fun);//返回值是：function，注意是：函数也是对象
+
+
+  // 定义函数方式二：
+  function fun2() {
+    console.log("您好，明天!");
+  }
+
+  fun2();
+
+  // 定义函数方式三：声明函数的方式，一般要在`{}`后面加上`;`
+  /**
+   * 注意是：方式三是将声明函数赋值给fun3，这种方式
+   * 一般是需要在`{}`后面加上`;`
+   */
+  var fun3 = function () {
+    console.log("您好，海康!");
+  };
+
+  fun3();
+</script>
+</body>
+</html>

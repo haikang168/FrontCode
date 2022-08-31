@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>对象的快速入门</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    /**
+     * 对象创建
+     * 使用new关键字调用的函数，是构造函数constructor
+     * 构造函数是专门用来创建对象的函数
+     * 使用`typeof`检查一个对象时，会返回object
+     */
+    var per = new Object();
+
+    /**
+     * 在对象中保存的值称为属性
+     * 向对象添加属性：
+     *      语法：对象.属性名 = 属性值
+     */
+    per.name = "rose";
+    per.age = 23;
+    per.sex = "女";
+
+    // 查看属性的值
+    alert(per.name)
+
+    // 修改属性值
+    per.age = 25;
+    alert(per.age)
+
+    // 删除属性
+    delete per.age
+
+    console.log(per)
+</script>
+</body>
+</html>
