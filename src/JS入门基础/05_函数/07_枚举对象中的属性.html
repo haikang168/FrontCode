@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>枚举对象中的属性</title>
+</head>
+<body>
+<script type="text/javascript">
+  var obj = {
+    name:"海康",
+    age:23,
+    sex:"男",
+    address:"湛江海康",
+  };
+  /**
+   * 枚举对象的语法：
+   * for(变量 in 对象名){
+   *     语句...
+   * }
+   */
+
+  for (const objKey in obj) {
+    console.log("对象属性名:"+objKey);
+    console.log("对象属性值:"+obj[objKey]);
+  }
+</script>
+</body>
+</html>
