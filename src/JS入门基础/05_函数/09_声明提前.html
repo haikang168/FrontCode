@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>声明提前</title>
+</head>
+<body>
+<script type="text/javascript">
+    // 变量的声明提前语法是：var 变量名 = 值;
+    // 返回值是：undefined，原因是：在下面的13行才进行赋值
+    console.log(a);//不会被报错，因为是`a`变量被提前声明了，相当于在上面声明了：var a;
+    // 如果不写`var a = 100`，而是写成：`a = 100;` 会直接报错
+    var a = 168;
+
+
+    /**
+     * 函数的声明提前语法是：
+     *  function 函数名(参数列表) {语句...}
+     *
+     * 注意是：
+     *  var 变量名 = function(参数列表) {语句...}
+     *  这种方式不是函数的提前声明，会报错的，这是变量的提前声明，
+     *  如果使用这种方式调用函数时，会报错，因为变量值是undefined 调用undefined会直接报错
+     */
+    function fun() {
+        alert("你好，函数的提前声明");
+    }
+
+    fun();
+</script>
+</body>
+</html>

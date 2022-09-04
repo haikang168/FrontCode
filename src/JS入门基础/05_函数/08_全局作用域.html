@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>08_全局作用域</title>
+</head>
+<body>
+<script type="text/javascript">
+    // 定义变量
+    var a = 100;
+    var b = 200;
+    // 上述定义的两个变量都是保存在`window`对象的属性中
+    // 可以使用window.属性的方式调用
+    console.log(window.a);//由于window是一个窗口对象，默认就是使用它，所以我们一般会省略掉
+    console.log(window.b);
+
+
+    //定义函数
+    function fun1(a,b) {
+        console.log(a+b);
+    }
+    // 上述定义的函数是保存在window对象中的方法中
+    // 可以使用window.方法名的方式调用
+    window.fun1(3,5);//由于window是一个窗口对象，默认就是使用它，所以我们一般会省略掉
+</script>
+</body>
+</html>

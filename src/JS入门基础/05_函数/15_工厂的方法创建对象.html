@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>工厂方法创建对象</title>
+</head>
+<body>
+<script type="text/javascript">
+  function createObject(name,age,sex) {
+    var obj = new Object();
+    obj.name = name;
+    obj.age = age;
+    obj.sex = sex;
+    obj.sayName = function () {
+      alert(this.name);//使用this关键字输入当前对象的name属性的值
+    }
+
+    return obj;// 注意是；使用工厂方法创建对象时，一定要将创建的对象返回
+  }
+
+  var object1 = createObject("海康",21,"男");
+  var object2 = createObject("南宁",22,"女");
+  var object3 = createObject("西安",21,"男");
+
+  object1.sayName();
+
+</script>
+</body>
+</html>

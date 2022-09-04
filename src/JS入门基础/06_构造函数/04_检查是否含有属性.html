@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>检查是否含有属性</title>
+</head>
+<body>
+<script type="text/javascript">
+    // 定义一个`Person`构造函数
+    function Person() {
+
+    }
+
+    // 向`Person`的原型中添加`name`属性
+    Person.prototype.name = "海康";
+
+    // 创建Person对象
+    var per = new Person();
+    per.age = 21;
+
+    // `in`关键字可以检查该对象及该对象的原型中是否含有查找的属性
+    console.log("name" in per);// 返回true，per对象中没有`name`属性，但是`per`对象的原型中含有`name`属性，所以返回true
+
+    console.log(per.hasOwnProperty("name"));// 返回false，原因是：`per`对象没有`name`，`hasOwnProperty`关键字只会在该对象中查找
+    console.log(per.hasOwnProperty("age"));// 返回true，原因是：`per`对象中有`age`属性
+</script>
+</body>
+</html>

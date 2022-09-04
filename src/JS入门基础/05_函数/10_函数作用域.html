@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>10_函数作用域</title>
+</head>
+<body>
+<script type="text/javascript">
+  /**
+   * 函数作用域
+   *  在函数中使用`var`关键字定义的变量就是函数变量
+   *  该变量的作用域只限于函数体内，如果在函数不使用`var`关键字定义变量
+   *  时，默认定义就是全局变量
+   */
+  function fun() {
+    var a = 100;
+    b = 100;// 如果在函数中不使用var定义的变量，默认就是全局变量，默认使用`window.变量名`
+    console.log(a);
+  }
+</script>
+</body>
+</html>

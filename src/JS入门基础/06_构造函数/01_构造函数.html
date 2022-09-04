@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数</title>
+</head>
+<body>
+<script type="text/javascript">
+  /**
+   *注意是：在构造函数中习惯将构造函数的首字母大写
+   *  一定要使用`this`关键字来区别当前全局变量的量
+   */
+  // 定义Person构造函数
+  function Person(name,age,sex) {
+    this.name = name;// 注意是：如不写this.name,而直接写name则会对全局变量进行赋值，是错误的
+    this.age = age;
+    this.sex = sex;
+    this.sayName = function () {
+      alert(this.name);
+    };
+  }
+
+  var per = new Person("海康",21,"男");
+
+  // 定义Dog构造函数
+  function Dog(name,age){
+    this.name = name;
+    this.age = age;
+    this.sayName = function () {
+      alert(this.name);
+    };
+  }
+
+  var dog = new Dog("大黄",3);
+
+  // 注意是：可以使用instanceof来判断一个对象的类型
+  console.log(per instanceof Person);//true
+  console.log(dog instanceof Person);//false
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>this关键字</title>
+</head>
+<body>
+<script type="text/javascript">
+  /**
+   * 解析器在调用函数每次都会向函数内部传递进一个隐含的参数,
+   * 是每个对象都隐含有的
+   *  在以函数的方式调用函数时，this传入的就是`window`
+   *  在以方法的方式调用函数时，this传入就是`当前的对象`
+   */
+  var name = "全局name";
+  function fun() {
+    alert("this当前是谁");
+    alert(this.name);
+  }
+
+  // 调用方式一：以函数方式调用传入是`window`对象
+  fun();
+
+  // 调用方式二：
+  // 以方法的方式调用传入是当前的对象
+  var obj = {
+    name:"海康",
+    sayFun:fun
+  }
+  // 以方法的方式调用
+  obj.sayFun();
+</script>
+</body>
+</html>

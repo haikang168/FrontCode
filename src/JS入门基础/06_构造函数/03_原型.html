@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>原型【非常重点】</title>
+</head>
+<body>
+<script type="text/javascript">
+  /**
+   * 案例：向Person构造函数中添加一个共有的属性和方法：max和sayName()
+   * 注意是：向原型中添加的属性和方法是所有通过Person构造函数创建的对象共享的
+   * 和Java中静态变量和静态方法一样
+   */
+  function Person(name,age,sex) {
+    this.name = name;
+    this.age = age;
+    this.sex = sex;
+  }
+
+  // 向原型中添加共有属性max和方法sayName()
+  Person.prototype.max = 168;
+  Person.prototype.sayName = function () {
+    alert(this.name);
+  }
+
+  var per1 = new Person("海康",21,"男");
+  var per2 = new Person("南宁",21,"女");
+
+  /**
+   * 注意是：如果构造函数直接`构造函数名.prototype`可以获取原型对象
+   *        如果是通过构造函数创建的对象需要通过`对象名.__proto__`才能获取原型对象
+   */
+  console.log(Person.prototype == per1.__proto__);// true
+  console.log(Person.prototype == per2.__proto__);// true
+</script>
+</body>
+</html>

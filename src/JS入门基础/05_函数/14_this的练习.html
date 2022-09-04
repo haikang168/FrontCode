@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>this的练习</title>
+</head>
+<body>
+<script type="text/javascript">
+
+  function fun() {
+    // this代表就是当前的对象，所以可以通过this来动态的输出name属性性
+    alert(this.name);
+  }
+
+  var obj1 = {
+    name:"海康",
+    showName:fun
+  };
+
+  var obj2 = {
+    name:"南宁",
+    showName:fun
+  };
+
+  var obj3 = {
+    name:"西安",
+    showName:fun
+  };
+
+  obj1.showName();
+  obj2.showName();
+  obj3.showName();
+  /**
+   * 输出结果是：
+   * 海康
+   * 南宁
+   * 西安
+   */
+</script>
+</body>
+</html>

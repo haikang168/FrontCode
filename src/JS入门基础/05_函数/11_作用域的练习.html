@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域的练习</title>
+</head>
+<body>
+<script type="text/javascript">
+  var a = 123;
+  function fun() {
+      alert(a);
+  }
+  fun();
+  // 结果：123
+
+//  ===================
+
+
+  var a = 123;
+  function fun() {
+      alert(a);
+      var a = 456;
+  }
+  fun();
+  alert(a);
+  // 结果 ：undefined 123
+
+//  ===================
+    var a = 123;
+    function fun() {
+        alert(a);
+        a = 456;
+    }
+    fun();
+    alert(a);
+    // 结果 ： 123  456
+
+
+// ==================
+
+  var a = 123;
+  function fun(a) {// 形参相当于在：函数体中声明一个var a;
+      alert(a);
+      a = 456;
+  }
+  fun();
+  alert(a);
+  // 结果：undefined  123
+
+// =====================
+  var a = 123;
+  function fun(a) {
+      alert(a);
+      a = 456;
+  }
+  fun(123);
+  alert(a);
+  // 结果：123 456
+</script>
+</body>
+</html>
