@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式快速入门</title>
+</head>
+<body>
+<script type="text/javascript">
+  // 第一步：创建正则表达式
+  // 表示包含`abc`中的其中一个即可，i：匹配模式，忽略大小写
+  var reg = new RegExp("[abc]","i");
+  // 创建正则表达式方式二：
+  var regExg = /a|b|c/i;
+
+  // 第二步：检查是否匹配
+  var result = reg.test("abcdefg");//返回：true
+
+  console.log(result);
+
+</script>
+</body>
+</html>

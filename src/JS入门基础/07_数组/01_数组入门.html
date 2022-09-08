@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>数组入门</title>
+</head>
+<body>
+<script type="text/javascript">
+  /**
+   * 1.数组对象的创建
+   */
+  var arr = new Array();
+
+  // 使用typeof检查一个数组时，会返回Object
+  console.log(typeof arr);
+
+  /**
+   * 2.向数组中添加元素
+   * 语法是：数组[索引] = 值;
+   */
+  arr[0] = "海康";
+  arr[1] = "南宁";
+  arr[2] = "西安";
+
+  /**
+   * 3.查询指定索引的值
+   * 语法：arr[索引值]
+   */
+  console.log(arr[1]);
+
+  /**
+   * 4.修改指定索引的值
+   * 语法：arr[索引值] = 值;
+   */
+  arr[2] = "杭州";
+
+  /**
+   * 5.数组对象中length属性
+   * length属性可以获取一个数组长度
+   * 可以设置一个数组长度
+   */
+  console.log(arr.length);
+</script>
+</body>
+</html>

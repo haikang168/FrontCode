@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+</head>
+<body>
+<button id="but" onclick="fun(1,2)">我是一个按钮</button>
+
+<script type="text/javascript">
+  // 使用文档对象获取`button`
+  var but = document.getElementById("but");
+
+  alert(but);
+  //
+  // but.onclick = function () {
+  //     alert("为属性绑定单击事件");
+  // };
+
+  function fun(a,b) {
+      alert(a+b);
+  }
+
+</script>
+</body>
+</html>

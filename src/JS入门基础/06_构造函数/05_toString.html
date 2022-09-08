@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>toString方法</title>
+</head>
+<body>
+<script type="text/javascript">
+  // 定义一个Person构造函数
+  function Person(name,age,sex) {
+      this.name = name;
+      this.age = age;
+      this.sex =sex;
+  }
+
+  // 向原型中重写toString方法
+  Person.prototype.toString = function () {
+      return  "person[name="+this.name+"age="+this.age+"sex="+this.sex+"]";
+  }
+
+  // 创建一个Person对象
+  var per = new Person("海康",21,"男");
+  console.log(per);//如果没有在Person原型中重写toString方法，默认使用就是Object中的toString方法
+  alert(per)
+</script>
+</body>
+</html>

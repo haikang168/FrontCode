@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>数组`slice()`和`splice()`方法</title>
+</head>
+<body>
+<script type="text/javascript">
+    /**
+     * slice()方法
+     */
+    var arr = ["海康","湛江","南宁","西安","西藏"];
+
+    var result = arr.slice(0,3);//包含开始的索引，不包含结束的索引
+
+    console.log("result = "+result);
+
+    /**
+     * splice()方法
+     */
+    var arr = ["海康","湛江","南宁","西安","西藏"];
+    var result2 = arr.splice(4,2);// 第一个参数是：表示是索引位置，第二个参数是：删除元素的个数
+    var result3 = arr.splice(4,2,"66","68","168","88");//第三个参数及后面的参数表示是，删除前面的元素后，并且将第三个参数及第三个参数的元素添加到数组中并返回
+
+    console.log(arr);
+    console.log(result2)
+    console.log(result3)
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式量词</title>
+</head>
+<body>
+<script type="text/javascript">
+  /**
+   * 创建一个正则表达式，用来检查一个字符串是否是一个合法手机号
+   */
+  var reg = /^1[3578][0-9]{9}/;
+  var result = reg.test("18888888888");
+  console.log(result);
+</script>
+</body>
+</html>

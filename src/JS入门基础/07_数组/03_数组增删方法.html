@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>数组四个增删方法</title>
+</head>
+<body>
+<script type="text/javascript">
+  var arr = ["海康","湛江"];
+
+  // 第一个方法：push()
+  // 向数组的未尾添加一个或多个元素，并返回数组最新的长度
+  result1 = arr.push("1");// 返回最新的长度是：3
+  result2 = arr.push("2","3");// 返回最新的长度是：5
+
+  console.log(result1);
+  console.log(result2);
+
+  // 第二个方法：pop()
+  // 删除数组中的最后一个元素，并返回删除的元素
+  var pop1 = arr.pop();// 返回是：3
+  var pop2 = arr.pop();// 返回是：2
+  console.log(pop1)
+  console.log(pop2)
+
+  // 第三个方法：unshift()
+  // 向数组开头添加一个或多个元素，并返回数组的最新长度
+  var unshift1 = arr.unshift("VUE");// 返回是：数组最新长度 4
+  var unshift2 = arr.unshift("SpringBoot","StringCloud");// 返回是：数组最新长度 6
+  console.log(unshift1)
+  console.log(unshift2)
+
+  // 第四个方法：shift()
+  // 删除数组开头的第一个元素，并返回删除的元素
+  var shift = arr.shift();// 返回是：SpringBoot
+  console.log(shift)
+</script>
+</body>
+</html>

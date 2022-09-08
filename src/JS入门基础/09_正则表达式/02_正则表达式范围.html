@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式范围</title>
+</head>
+<body>
+<script type="text/javascript">
+
+  // 第一步：创建正则表达式
+  var reg = /[abc]/i;
+
+  // 第二步：检查是否符合
+  console.log(reg.test("awer"));// true
+  console.log(reg.test("123"));// false
+
+  var reg = /[^abc]/i;//表示是除了abc的所有字符
+  console.log(reg.test("abc"));// false
+  console.log(reg.test("123"));// true
+
+
+  var reg = /[a-z]/i;// 表示`a到z`
+  console.log(reg.test("ab"));//true
+  console.log(reg.test("168"));// false
+
+  // 练习：检查一个字符串中是否含有：abc 或 adc 或 aec
+  var reg = /abc|adc|aec/;
+  // var reg = /a[bde]c/;  以上面的是等价的
+  console.log(reg.test("abc"));
+</script>
+</body>
+</html>

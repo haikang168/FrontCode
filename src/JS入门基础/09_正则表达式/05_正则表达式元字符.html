@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式元字符</title>
+</head>
+<body>
+<script type="text/javascript">
+  /**
+   * 创建一个正则表达式检查一个字符串是否含有单词`child`
+   */
+  var reg = /\bchild\b/;//注意是：`\b`表示是：边界的意思
+  console.log(reg.test("hello  child "));
+
+  /**
+   * 去用户输入的前后空格，单词之间的空格不需要去除
+   */
+  var str = "         hello eeje    ";
+  str = str.replace(/^\s*|\s*$/g,"");
+  console.log(str);// 返回是：`hello eeje`
+</script>
+</body>
+</html>

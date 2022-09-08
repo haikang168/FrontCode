@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>数组遍历练习</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    /*
+     * 创建一个函数，可以将perArr中的满18岁的Person提取出来，
+     * 	然后封装到一个新的数组中并返回
+     * arr
+     * 	形参，要提取信息的数组
+     */
+    // 第一步：定义Person构造函数
+    function Person(name,age,sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+
+    // 第二步：创建Person对象
+    var per1 = new Person("海康",21,"男");
+    var per2 = new Person("南宁",21,"女");
+    var per3 = new Person("西安",16,"男");
+    var per4 = new Person("西藏",21,"女");
+
+    // 第三步：创建数组，并且向数组中添加Person对象
+    var arr = [per1,per2,per3,per4];
+
+    // 第四步：遍历数组，将满18岁Person对象封装到新的数组中
+    var perArr = new Array();
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].age>=18){
+            perArr[i] = arr[i];
+        }
+    }
+
+    // 第五步：打印新的数组
+    console.log(perArr);
+</script>
+</body>
+</html>

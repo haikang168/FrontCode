@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>文档加载顺序</title>
+  <script type="text/javascript">
+    // 文档加载顺序是自上向下加载的
+    /**
+     * 如果需要获取下面的元素时，需要为`window`对象绑定一个onload事件
+     * 来解决该问题
+     */
+    window.onclick = function () {
+      // 获取按钮对象
+      var but = document.getElementById("but");
+
+      // 为按钮绑定单击事件
+      but.onclick = function () {
+        alert("点我干啥!");
+      }
+    };
+  </script>
+</head>
+<body>
+<button id="but">我是一个按钮</button>
+
+</body>
+</html>

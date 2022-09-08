@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>图片切换</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    #outer {
+      margin: 20px auto;
+      padding: 20px;
+      width: 520px;
+      background-color: #99ff99;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="outer">
+    <p id="info"></p>
+    <img src="img/1.jpg" id="img" height="500px" width="500px" title="rose" alt="rose您好"/>
+    <button id="but1">上一张</button>
+    <button id="but2">下一张</button>
+</div>
+
+<script type="text/javascript">
+
+
+    // 第一步：获取元素标签
+    var img = document.getElementById("img");
+
+    // 第二步：获取上一张和下一张的
+    var prev = document.getElementById("but1");// 上一张
+    var next = document.getElementById("but2");// 下一张
+
+    // 第三步：
+    var info = document.getElementById("info");
+
+    // 第四步：创建一个数组用于保存图片
+    var arrImg = ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg","img/6.jpg","img/7.jpg","img/8.jpg"];
+
+    var index = 0;
+
+    //设置提示文字
+    info.innerHTML = "一共 "+arrImg.length+" 张图片，当前第 "+(index+1)+" 张";
+
+
+    prev.onclick = function () {
+        --index;
+
+        if (index<0){
+            index = arrImg.length - 1;
+        }
+
+        img.src = arrImg[index];
+
+        //当点击按钮以后，重新设置信息
+        info.innerHTML = "一共 "+arrImg.length+" 张图片，当前第 "+(index+1)+" 张";
+    };
+
+    next.onclick = function () {
+        ++ index;
+        if (index>arrImg.length-1){
+            index = 0;
+        }
+
+        img.src = arrImg[index];
+
+        //当点击按钮以后，重新设置信息
+        info.innerHTML = "一共 "+arrImg.length+" 张图片，当前第 "+(index+1)+" 张";
+    }
+</script>
+</body>
+</html>

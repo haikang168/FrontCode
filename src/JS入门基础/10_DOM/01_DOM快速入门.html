@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM快速入门</title>
+</head>
+<body>
+<button id="but">我是按钮</button>
+
+<script type="text/javascript">
+    // 使用`JS`获取按钮
+    // 使用document文档对象中的`getElementById()`方法
+    var but = document.getElementById("but");
+
+    // 使用属性修改文本
+    but.innerHTML = "I'm button";
+</script>
+</body>
+</html>
