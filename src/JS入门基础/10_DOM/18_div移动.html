@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>div移动</title>
+  <style>
+    img {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: 0;
+      left: 5px;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <img src="img/1.jpg">
+</div>
+
+<script type="text/javascript">
+    var img = document.getElementsByTagName("img")[0];
+  document.onkeydown = function (ev) {
+
+
+      if (ev.keyCode == 37) {
+         img.style.left=(img.offsetLeft-10)+"px";
+      }
+      if (ev.keyCode == 38) {
+          img.style.left=(img.offsetTop-10)+"px";
+      }
+      if (ev.keyCode == 39) {
+          img.style.left=(img.offsetLeft+10)+"px";
+      }
+      if (ev.keyCode==40){
+          img.style.left=(img.offsetTop+10)+"px";
+      }
+  }
+</script>
+</body>
+</html>

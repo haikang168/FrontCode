@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标移动事件</title>
+  <style>
+    #box1 {
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;
+
+      /*background-color: #99ff99;*/
+    }
+
+    #box2 {
+      width: 200px;
+      height: 50px;
+      border: 1px solid black;
+      /*background-color: green;*/
+    }
+  </style>
+
+  <script type="text/javascript">
+    window.onload = function () {
+      var box1 = document.getElementById("box1");
+      var box2 = document.getElementById("box2");
+
+      /*
+       * onmousemove
+       * 	- 该事件将会在鼠标在元素中移动时被触发
+       *
+       * 事件对象
+       * 	- 当事件的响应函数被触发时，浏览器每次都会将一个事件对象作为实参传递进响应函数,
+       * 		在事件对象中封装了当前事件相关的一切信息，比如：鼠标的坐标  键盘哪个按键被按下  鼠标滚轮滚动的方向。。。
+       */
+
+      /**
+       * 解决兼容性问题，由于在IE8中，事件对象是在`window`对象的属性中，
+       * 不像版本浏览器事件对象，作为实参传递响应函数中
+       */
+
+
+
+      box1.onmousemove = function (e) {
+          e = e || window.event;
+        var x = e.clientX;
+        var y = e.clientY;
+
+        box2.innerText = "x = "+x+",y = "+y;
+      }
+    };
+  </script>
+</head>
+<body>
+<div id="box1"></div>
+<br/>
+<div id="box2"></div>
+</body>
+</html>

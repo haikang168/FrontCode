@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+</head>
+<body>
+<h3></h3>
+<script type="text/javascript">
+  //定义定时器
+  var i=0;
+  var interval = setInterval(function () {
+
+      document.getElementsByTagName("h3")[0].innerHTML = (++i);
+      if (i==88){
+          clearInterval(interval);
+      }
+  },1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+  <style>
+    #div {
+      width: 100px;
+      height: 100px;
+      background-color: #99ff99;
+    }
+  </style>
+</head>
+<body>
+<div id="div"></div>
+<script>
+  var div = document.getElementById("div");
+
+  function mousewheel(event) {
+
+      event = event || window.event;
+
+    //event.wheelDelta 可以获取鼠标滚轮滚动的方向
+    //向上滚 120   向下滚 -120
+    //wheelDelta这个值我们不看大小，只看正负
+
+    //alert(event.wheelDelta);
+
+    //wheelDelta这个属性火狐中不支持
+    //在火狐中使用event.detail来获取滚动的方向
+    //向上滚 -3  向下滚 3
+    //alert(event.detail);
+
+
+    /*
+     * 当鼠标滚轮向下滚动时，box1变长
+     * 	当滚轮向上滚动时，box1变短
+     */
+    //判断鼠标滚轮滚动的方向
+    if(event.wheelDelta > 0 || event.detail < 0){
+      //向上滚，box1变短
+      div.style.height = div.clientHeight - 10 + "px";
+
+    }else{
+      //向下滚，box1变长
+        div.style.height = div.clientHeight + 10 + "px";
+    }
+  }
+
+  // 注意该方法不支持火狐浏览器
+  div.onmousewheel = function (e) {
+    /*
+     * 当鼠标滚轮向下滚动时，box1变长
+     * 	当滚轮向上滚动时，box1变短
+     */
+
+      mousewheel(e);
+  };
+
+  // 为火狐绑定滚动事件
+  div.addEventListener("DOMMouseScroll",function (e) {
+    /*
+     * 当鼠标滚轮向下滚动时，box1变长
+     * 	当滚轮向上滚动时，box1变短
+     */
+
+      mousewheel(e);
+  },false);
+
+
+
+</script>
+</body>
+</html>

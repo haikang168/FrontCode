@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+</head>
+<body>
+<script>
+  // 注意是：`JSON`对象必须加`单或双引号`
+  var person = '{"name":"海康","age":18,"sex":"男"}';
+  var arr = '["hello","eeje","haikang"]';
+
+  // 使用`JSON`中的`parse()`方法将`JSON`转换成`JS`对象
+
+  var parse = JSON.parse(person);
+  alert(parse.name);
+
+  var arr = JSON.parse(arr);
+  alert(arr[1]);
+
+
+    // JS对象转换成`JSON`字符串
+    var obj = {
+          name:"湛江",
+          age:22,
+          sex:"男",
+          address:"广东省湛江市"
+    };
+    var obj = JSON.stringify(obj);
+    alert(obj);
+</script>
+</body>
+</html>

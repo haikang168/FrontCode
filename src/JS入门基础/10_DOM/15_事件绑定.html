@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+</head>
+<body>
+<button id="but1">点击我试试</button>
+<script type="text/javascript">
+  // 第一步：获取`but1`对象
+  var but1 = document.getElementById("but1");
+
+  // 由于下面的方式：绑定事件，后面的绑定的事件会覆盖前面绑定的事件
+  // but1.onclick = function () {
+  //   alert(1);
+  // };
+  //
+  // but1.onclick = function () {
+  //   alert(2);
+  // };
+
+
+  // 需要使用下面的方式来解决，绑定前面的事件覆盖绑定事件情况
+  // 由于这种方式不支持`IE8`，可以使用别的方式来解决
+  but1.addEventListener("click",function () {
+    alert(1),false
+  });
+
+  but1.addEventListener("click",function () {
+    alert(2),false
+  });
+
+  but1.addEventListener("click",function () {
+    alert(3),false
+  });
+
+</script>
+</body>
+</html>

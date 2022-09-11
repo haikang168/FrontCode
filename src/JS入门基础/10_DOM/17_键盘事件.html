@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘事件</title>
+</head>
+<body>
+<input type="text">
+
+<script type="text/javascript">
+  /**
+   * 为input输入框中绑定键盘事件
+   */
+  // document.getElementsByTagName("input")[0].onkeydown = function (e) {
+  //     // 获取从键盘中输入的按键
+  //     console.log(e.key);
+  // };
+
+  document.getElementsByTagName("input")[0].onkeyup = function (e) {
+      // 用户不能输入数字
+      if (e.key>=48 && e.key<=57){
+          // 表示用户不能输入数字
+          return false;
+      }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>事件冒泡</title>
+  <style>
+    #div{
+      width: 200px;
+      height: 200px;
+      background-color: #99ff99;
+    }
+    #span{
+      width: 20px;
+      height: 20px;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+
+<div id="div">
+  我是div
+  <span id="span">我是span</span>
+</div>
+
+<script type="text/javascript">
+  // 第一步：分别为这些对象绑定单击事件
+  var span = document.getElementById("span");
+  var div = document.getElementById("div");
+
+  // 第二步：可以取消冒泡事件
+
+  span.onclick = function (ev) {
+    alert("我是span");
+
+    // 取消冒泡事件
+    ev.cancelBubble = true;
+  };
+
+  div.onclick = function (ev){
+    alert("我是div");
+    // 取消冒泡事件
+    ev.cancelBubble = true;
+  };
+
+  document.getElementsByTagName("body")[0].onclick = function (ev) {
+    alert("我是body");
+    // 取消冒泡事件
+    ev.cancelBubble = true;
+  };
+
+</script>
+</body>
+</html>

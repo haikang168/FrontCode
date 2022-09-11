@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>内联样式</title>
+  <style>
+    #box {
+      width: 200px;
+      height: 100px;
+      background-color: #99ff99;
+    }
+  </style>
+</head>
+<body>
+
+<div id="box"></div>
+<button id="but">点我</button>
+<button id="but2">再点我试试</button>
+
+<script type="text/javascript">
+    /**
+     * 设置内联样式
+     * @type {HTMLElement}
+     */
+  // 第一步：获取but对象和#box对象
+  var but = document.getElementById("but");
+  var box = document.getElementById("box");
+  var but2 = document.getElementById("but2");
+  but.onclick = function () {
+    // 第二步：修改内联样式
+    box.style.width = "430px";
+    box.style.height = "430px";
+    box.style.backgroundColor = "green";
+  };
+
+    /**
+     * 读取内联样式
+     */
+    but2.onclick = function () {
+      alert(box.style.backgroundColor);
+    };
+
+</script>
+</body>
+</html>

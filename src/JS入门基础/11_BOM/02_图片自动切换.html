@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>图片自动切换</title>
+  <style>
+
+  </style>
+</head>
+<body>
+<img src="img/1.jpg" id="img" style="width: 500px;height: 500px;margin: 50px auto;" alt="rose">
+<br/>
+<button id="start">开始</button>
+<button id="end">结束</button>
+<script>
+  var arrImg = ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg","img/6.jpg","img/7.jpg","img/8.jpg"];
+  var start = document.getElementById("start");
+  var end = document.getElementById("end");
+
+  var index = 0;
+  var interval = 0;
+  start.onclick = function () {
+      interval = setInterval(function () {
+          if (index>=arrImg.length){
+              index=0;
+          }
+          var img = document.getElementById("img");
+          img.src=arrImg[index++];
+          // console.log(++index);
+      },2000);
+  };
+
+  end.onclick = function () {
+      clearInterval(interval);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>事件委派</title>
+</head>
+<body>
+<button id="but">生成新超链接</button>
+<ul id="ul">
+  <li><a href="javascript:;">超链接1</a> </li>
+  <li><a href="javascript:;">超链接2</a> </li>
+  <li><a href="javascript:;">超链接3</a> </li>
+</ul>
+
+<script>
+  // 第一步：获取所有的超链接
+  var allA = document.getElementsByTagName("a");
+
+  // 由于这种方式需要为每个超链接都要绑定单击事件，麻烦，所以可以使用事件委派来解决
+  // for (let i = 0; i < allA.length; i++) {
+  //   this.onclick = function () {
+  //     alert("fadsfsa");
+  //   };
+  // };
+
+  var but = document.getElementById("but");
+  var ul = document.getElementById("ul");
+
+
+
+  but.onclick = function (ev) {
+      // 第二步：生成一个`li`对象
+      var li = document.createElement("li");
+      li.innerHTML = "<a href='javascript:;'>新生成超链接</a> ";
+      ul.appendChild(li);
+  };
+
+  // 为ul绑定单击事件
+  var ul = document.getElementById("ul");
+  ul.onclick = function () {
+      alert("您点我做啥!");
+  };
+
+</script>
+</body>
+</html>
