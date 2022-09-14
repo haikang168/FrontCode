@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>高阶函数</title>
+</head>
+<body>
+<script>
+  // 作为参数传递
+  function fnu(a, b, callback) {
+    alert("a+b = "+(a+b));
+    callback&&callback();
+  }
+
+  // 调用函数
+  fnu(1,2,function () {
+    alert("我是高阶函数作为参数传递");
+  });
+
+  function fnuReturn() {
+    return function () {
+      alert("我作为返回值，返回");
+    }
+  }
+</script>
+</body>
+</html>

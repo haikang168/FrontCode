@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>对象解构</title>
+</head>
+<body>
+<script>
+  // 对象解构
+  let person = {
+    name:"海康",
+    age:22,
+    sex:"男"
+  }
+
+  // 注意是：变量名一定要和对象中的属性一致，
+  // 否则变量名与属性无法进行映射，变量名将不会被赋值，值为undefined
+  let {name,age,sex} = person;
+  console.log(name);
+  console.log(age);
+  console.log(sex);
+
+  // 解决变量名与属性名不一致的方法就是使用别名
+  let{name:myName,age:myAge,sex:mySex} = person;
+  console.log(myName);
+  console.log(myAge);
+  console.log(mySex);
+</script>
+</body>
+</html>

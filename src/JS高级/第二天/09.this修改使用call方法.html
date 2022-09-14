@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>call方法</title>
+</head>
+<body>
+<script>
+  // 定义函数
+  function fun(a, b) {
+    alert("a+b = "+(a+b));
+  }
+
+  // 使用call修改this指向问题
+  var obj = {
+    name:"海康",
+    age:22
+  };
+
+  fun.call(obj,1,2);
+</script>
+</body>
+</html>

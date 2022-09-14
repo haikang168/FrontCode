@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>继承父类型属性</title>
+</head>
+<body>
+<script type="text/javascript">
+  // 借用父类构造函数继承属性
+  // 1.父构造函数
+  function Father(name, age) {
+    this.name=name;
+    this.age=age;
+  }
+
+  // 向父类原型中添加`say()`方法
+  Father.prototype.say = function () {
+    alert("我的名字是："+this.name+"\t年龄是："+this.age);
+  }
+
+  // 2.子构造函数
+  function Son(name, age,score) {
+    // this 指向子构造函数的对象实例
+    Father.call(this,name,age);
+    this.score=score;
+  }
+
+  // 子类继承父类方法步骤是：
+  // 1.修改子原型对象
+  Son.prototype = new Father();
+  // 2.如果利用对象的形式修改了原型对象，则需要利用`constructor`指回原来的构造函数
+  Son.prototype.constructor = Son;
+
+  // 子构造函数专门方法
+  Son.prototype.exam = function () {
+    console.log("考试了");
+  }
+
+  // 使用子构造函数创建对象
+  var son = new Son("海康",22,100);
+  console.log(son);
+</script>
+</body>
+</html>

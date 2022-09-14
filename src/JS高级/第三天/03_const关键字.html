@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>const关键字</title>
+</head>
+<body>
+<script>
+  // const关键字声明的变量具有块级域作用
+  if (true){
+    const num = 168;
+    console.log(num);
+  }
+  // console.log(num);// const关键字声明变量具有块级作用域，不能在块级作用域外使用
+
+  // const关键字声明的变量必须赋值，否则报错
+  const PI = 3.141592;// 赋值是基本数据类型后，值是不能被修改的
+  // PI = 3.14;//Attempt to assign to const or readonly variable
+
+
+  // const关键字声明的变量如果是：引用数据类型【地址指向类型】，地址值不能改变，
+  // 但是引用对象中的内容是可以修改的
+  const arr = [1,2,3];
+  console.log(arr);// 返回：1,2,3
+
+  arr[0] = "海康";
+  arr[1] = "南宁";
+  console.log(arr);// 返回："海康","南宁",3
+
+  // 但是地址值是不能修改的，如下案例是错误的，会报错
+  // arr = ["a","b",1]; // Attempt to assign to const or readonly variable
+
+</script>
+</body>
+</html>

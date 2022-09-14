@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<body>
+<script>
+  // 定义一个函数
+  function fu() {
+    var num = 10;
+    // 在内部嵌套一个函数，并且在嵌套函数中使用
+    // 外部函数的变量num，所以外部函数被称为闭包
+    return function fun() {
+      alert("num= "+num);
+    }
+  }
+
+  var f = fu();
+  f();//如何在全局作用域中访问局部变量
+</script>
+</body>
+</html>

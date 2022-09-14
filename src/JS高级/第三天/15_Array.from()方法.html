@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Array.from()方法</title>
+</head>
+<body>
+<script>
+  // 将一个伪数组转成真正数组
+  let arrLike = {
+    "0":"海康",
+    "1":"湛江",
+    "2":"西安",
+    length:3
+  }
+  var newArr = Array.from(arrLike);
+  alert(newArr);
+
+
+  // 方法还可以接受第二个参数，作用类似于数组的map方法，用来对每个元素进行处理，将处理后的值放入返回的数组
+  let arr1 = {
+      "0":1,
+      "1":2,
+      "2":3,
+      length: 3
+  }
+
+  var newArr1 = Array.from(arr1, item => item*2);// 表示数组中每一个元素都乘以2
+  alert(newArr1);// 返回值是：2,4,6
+</script>
+</body>
+</html>

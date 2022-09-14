@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>在模板字符串中可以调用函数</title>
+</head>
+<body>
+<script>
+  // 定义一个函数
+  function fun() {
+    return "哈哈哈哈 追不到我吧 我就是这么强大";
+  }
+
+  // 使用模板字符串调用函数
+  let str = `${ fun() }  哈哈哈哈`;
+  alert(str);//返回值：哈哈哈哈 追不到我吧 我就是这么强大  哈哈哈哈
+</script>
+</body>
+</html>

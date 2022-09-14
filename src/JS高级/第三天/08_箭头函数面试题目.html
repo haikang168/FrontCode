@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数面试题目</title>
+</head>
+<body>
+<script>
+  // 定义一个对象
+  var obj = {
+    name:"海康",
+    age:20,
+    say: ()=>{
+      alert(this.name);//返回：undefined，原因是obj对象不能产生作用域，
+      // 所以定义`say`就是定义在`全局作用域`下，所以指向就是`window`
+      // 由于`window`没有该属性，所以返回`undefined`
+    }
+  }
+</script>
+</body>
+</html>

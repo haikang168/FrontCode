@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>数组解构</title>
+</head>
+<body>
+<script>
+  // 定义数组
+  let arr = [1,2,3];
+  // 数组解构允许我们按照一一对应的关系从数组中提取值 然后将值赋值给变量
+  let [a,b,c] = arr;
+  console.log(a);// 1
+  console.log(b);// 2
+  console.log(c);// 3
+
+  // 如果数组的长度小于变量长度时，剩下的变量使用undefined进行赋值
+  let newArr = ["海康","南宁","西安"];
+  let [name1,name2,name3,name4,name5] = newArr;//由于数组长度只能为前面三个变量赋值，
+  // 剩下的name4,name5则没有被赋值，只有声明所以值为`undefined`
+  console.log(name1);// name1
+  console.log(name2);// name2
+  console.log(name3);// name3
+  console.log(name4);// undefined
+  console.log(name5);// undefined
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>类定义</title>
+</head>
+<body>
+<script>
+  // 定义类
+  class Person {
+    constructor(name,age) {
+      this.name=name;
+      this.age=age;
+    }
+
+    say(){
+      console.log(this.name);
+    }
+  }
+
+  // 通过类创建实例
+  var person = new Person("海康",22);
+  // 调用方法
+  person.say();
+</script>
+</body>
+</html>

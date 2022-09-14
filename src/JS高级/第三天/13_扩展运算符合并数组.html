@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>扩展运算符合并数组</title>
+</head>
+<body>
+<script>
+  let arr1 = [1,2,3];
+  let arr2 = [4,5,6];
+
+  // 合并数组的方式一：
+  arr1.push(...arr2);
+  console.log(arr1);
+
+  // 合并数组的方式二：
+  let newArr = [...arr1,...arr2];
+  alert(newArr);
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Array对象中的find()方法</title>
+</head>
+<body>
+<script>
+  let arrObj = [{
+    id:0,
+    name:"海康"
+  },
+    {
+      id:1,
+      name:"南宁"
+    }];
+
+  let target = arrObj.find((item , index)=> item.id === 1);
+  alert(target);
+</script>
+</body>
+</html>

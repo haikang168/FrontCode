@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>bind方法修改this指向问题</title>
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<script>
+  // 第一步：定义function函数
+  function fun(a, b) {
+    alert("a+b= "+(a+b));
+  }
+
+  // 使用bind方法修改this指向,注意是：bind方法会返回新的函数，并且不会立即执行
+  var o = {
+    name:"海康"
+  };
+
+  var funBind = fun.bind(o,1,2);
+  funBind();
+
+  var buts = document.querySelectorAll("button");
+  // 为所有的按钮绑定单击事件
+  for (let i = 0; i < buts.length; i++) {
+    buts[i].onclick = function () {
+      // 当按钮被按下后禁用，三秒后解除禁用
+      this.disabled=true;
+      setTimeout(function () {
+        //三秒后解除禁用
+        this.disabled=false;
+      }.bind(this),3000);
+    }
+  }
+</script>
+</body>
+</html>

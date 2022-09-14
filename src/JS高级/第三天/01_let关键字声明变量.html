@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>let关键字声明变量</title>
+</head>
+<body>
+<script>
+  /**
+   * 使用`let`关键字声明变量
+   * 1.使用`let`关键字声明的变量具有块级作用域的特点
+   * 2.在一个大括号中，使用`let`关键字声明的变量才具有块级作用域
+   * `var`关键字是不具备这个特点的
+   *
+   * 3.防止循环变量变成全局变量
+   *
+   * 4.使用`let`关键字声明的变量没有变量提前声明（也就是没有变量提升）【重点】
+   *
+   * 5.使用`let`关键字声明的变量具有暂时性死区特性【重点】
+   */
+
+  // 1.使用`let`关键字声明的变量具有块级作用域的特点
+  if (true){
+    let num = 168;
+    // 在块级作用域中使用num是没有问题的，
+    // 如果在大括号外使用num，则会报错`ReferenceError: num is not defined`说明没有定义
+    console.log(num);
+  }
+
+  // console.log(num);// 错误的，ReferenceError: num is not defined
+
+  // 2.在一个大括号中，使用`let`关键字声明的变量才具有块级作用域，`var`关键字不具有该特点
+  if (true){
+      var num1 = 168;
+      let num2 = 168168;
+  }
+  // console.log(num2);// 可以正确输出，说明在块级外可以使用`var`声明的变量，也说明了`var`关键字不具有该特点
+  // console.log(num1);// 错误的，ReferenceError: num is not defined
+
+
+  // 3.防止循环变量变成全局变量
+
+  for (let i = 0; i < 3; i++) {
+      console.log(i);//可以防止`i`变量在在括号外部使用
+  }
+  // console.log(i);//错误的，如果使用`var`声明的变量，可以使用，此时i的值是`3`
+
+</script>
+</body>
+</html>

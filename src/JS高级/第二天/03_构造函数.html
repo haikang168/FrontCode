@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数</title>
+</head>
+<body>
+<script>
+  // 定义构造函数
+  function Person(name, age , address) {
+    this.name=name;
+    this.age=age;
+    this.address=address;
+  }
+
+  // 为原型以对象的形式赋值
+  // 但是这种赋值方式，会覆盖掉构造函数原型对象原来内容
+  Person.prototype = {
+    // 如果我们修改原来的原型对象，给原型对象赋值的是一个对象
+    // 则必须手动的利用`constructor`指回原来的构造函数
+    constructor:Person,
+    say:function () {
+      alert("我是"+this.name);
+    },
+      myAddress:function () {
+      alert("我的家"+this.address);
+    }
+  }
+
+  // 创建对象
+  var per = new Person("海康",22,"湛江");
+  per.say();
+  per.myAddress();
+</script>
+</body>
+</html>

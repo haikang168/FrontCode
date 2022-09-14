@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>扩展运算符（扩展方法）</title>
+</head>
+<body>
+<script>
+  // 扩展运算符（扩展方法）
+  // 第一步：定义一个数组
+  let arr = [1,2,3,4,5,6];
+  // 第二步：使用扩展运算符，转成参数序列
+  // ...arr; 得到是：`1,2,3,4,5,6`
+  console.log(...arr);//输出是：1 2 3 4 5 6
+  console.log(1,2,3,4,5,6);//这句和上面那句作用一样，输出也是：1 2 3 4 5 6
+  // 因为在log方法中是以`,`为分隔符输出
+</script>
+</body>
+</html>

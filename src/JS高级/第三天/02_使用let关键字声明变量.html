@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>let声明的变量</title>
+</head>
+<body>
+<script>
+    /**
+     * 4.使用`let`关键字声明的变量没有变量提前声明（也就是没有变量提升）【重点】
+     */
+    if (true){
+        // console.log(num);//会报错，说num没有声明
+        let num = 168;//所以必须先声明后使用
+    }
+
+    var a = 999;
+    if (true){
+        a = "海康";//此句会报错，说没有声明就使用，由于在下面使用let关键字声明了`a`，
+        // 使得全局`a`出现了暂时性死亡
+        let a = 888;
+    }
+</script>
+</body>
+</html>

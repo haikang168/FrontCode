@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+</head>
+<body>
+<script type="text/javascript">
+  // 第一步：定义类
+  class Father {
+    // 父类
+    constructor(name) {
+      this.name=name;
+    }
+
+    say(){
+      console.log("你的姓名："+this.name);
+    }
+  }
+
+  class Son extends Father{
+    // 子类继承父类
+  }
+
+  // 第二步：创建对象
+  var son = new Son("海康");
+  // 调用方法
+  son.say();
+</script>
+</body>
+</html>

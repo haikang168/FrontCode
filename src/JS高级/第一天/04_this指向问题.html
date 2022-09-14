@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>this指向问题</title>
+</head>
+<body>
+<button id="but">点我试试</button>
+<script type="text/javascript">
+  var that;// 用于记录创建对象的实例
+  class Person{
+    constructor(name,age) {
+      that=this;//代表是person
+      this.name=name;
+      this.age=age;
+      this.but = document.getElementById("but");
+      // 点击按钮调用say()方法
+      this.but.onclick = this.say;
+    }
+
+    say(){
+      // 对象的this输出name
+      alert(that.name);
+    }
+  }
+
+  var person = new Person("海康",22);
+</script>
+</body>
+</html>

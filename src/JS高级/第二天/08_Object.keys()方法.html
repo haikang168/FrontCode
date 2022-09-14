@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>keys方法</title>
+</head>
+<body>
+<script>
+  // 定义一个对象
+  var obj = {
+    name:"海康",
+    age:22,
+    address:"湛江雷州",
+    sex:"男"
+  };
+
+  // 使用`for...in`的方法
+  for (const objKey in obj) {
+    alert(objKey);
+  }
+
+  // 使用`Object.keys(obj);`
+  var keys = Object.keys(obj);// 返回是一个数组
+  for (let i = 0; i < keys.length; i++) {
+    alert(keys[i]);
+  }
+</script>
+</body>
+</html>

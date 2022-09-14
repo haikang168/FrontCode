@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>原型</title>
+</head>
+<body>
+<script>
+  // 1.定义构造函数
+  function Person(name,age) {
+    this.name=name;
+    this.age=age;
+  }
+
+  // 2.在原型中添加say()方法
+  Person.prototype.say = function () {
+    alert(this.name);
+  };
+
+  var per1 = new Person("海康",20);
+  var per2 = new Person("湛江",21);
+
+  per1.say();
+  per2.say();
+</script>
+</body>
+</html>

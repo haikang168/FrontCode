@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>剩余参数</title>
+</head>
+<body>
+<script>
+  // 剩余参数
+  function fun(a, ...arr) {
+    console.log("a="+a);
+    for (let i = 0; i < arr.length; i++) {
+      console.log(arr[i]);
+    }
+  }
+
+  fun(1,2,3,4,5,6);
+  // 所以将1赋值给了`a`，剩余的全部赋值给arr
+
+
+</script>
+</body>
+</html>

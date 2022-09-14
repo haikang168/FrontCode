@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数</title>
+</head>
+<body>
+<script>
+  // 定义一个箭头函数，计算两个数的和
+  const fun = (a,b) => {
+    return a+b;
+  };
+
+  const result = fun(1,2);
+
+  console.log(result);
+
+  // 由于上面的箭头函数只一条语句，所以可以省略掉`{}`和`return`语句
+  // 直接写成下面的方式：但是不建议写成这种方式
+  const  f = (a,b) => a+b;
+  result2 = f(1,7);
+  console.log(result2);
+
+  // 如果箭头函数只有一个参数时，则可以省略小括号
+  const fun1 = num => {
+    console.log("num= "+num);//当参数只有一个时，可以省略小括号
+  }
+
+  fun1(8);
+</script>
+</body>
+</html>

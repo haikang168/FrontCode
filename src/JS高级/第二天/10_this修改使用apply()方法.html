@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改this指向问题</title>
+</head>
+<body>
+<script>
+  // 定义一个函数
+  function fun(a, b, c) {
+    alert("name "+this.name);
+    alert("a+b+c = "+(a+b+c));
+  }
+
+  // 使用apply()方法，修改指向问题
+  var obj = {
+    name:"海康",
+    age:22
+  };
+
+  fun.apply(obj,[1,2,3]);
+
+  // 一般apply使用会配合Math内置对象来使用
+  // 求一个数组中的最大值
+  var arr = [11,2,43,35,55,66,168,99,16888186,88,66];
+  var max = Math.max.apply(Math,arr);
+  alert(max);
+
+</script>
+</body>
+</html>

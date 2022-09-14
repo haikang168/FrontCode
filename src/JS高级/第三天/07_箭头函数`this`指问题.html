@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数`this`指问题</title>
+</head>
+<body>
+<script>
+  // 普通函数的指向问题
+  var obj = {
+    name:"海康"
+  }
+
+  function fun() {
+    console.log("this="+this);// this指向是obj
+
+    return function () {
+      console.log("this="+this);//执行this是`window`
+    }
+  }
+
+  var callFun = fun.call(obj);
+  callFun();//执行this是`window`
+
+
+  // 箭头函数的this指向
+  function fu() {
+    console.log("this="+this);// this指向是obj
+
+    return  () => {
+      console.log("this="+this);//执行this是`obj`，指向是谁调用这个函数指向就是谁指向的是函数定义位置的上下文this。
+    }
+  }
+
+  var callFu = fu.call(obj);
+  callFu();//执行this是`obj`
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>super关键字</title>
+</head>
+<body>
+<script type="text/javascript">
+  // 第一步：定义类
+  class Person {
+    constructor(surname) {
+      this.surname=surname;
+    }
+  }
+
+  class Student extends Person{
+    constructor(surname,firstname) {
+      super(surname);// 调用父类的构造器方法
+      this.firstname=firstname;
+    }
+  }
+
+  // 第二步：创建实例化
+  var student = new Student("海康","湛江");
+  console.log(student.surname+"\t"+student.firstname);
+</script>
+</body>
+</html>

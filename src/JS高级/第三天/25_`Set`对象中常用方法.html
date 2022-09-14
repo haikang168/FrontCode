@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>`Set`对象中常用方法</title>
+</head>
+<body>
+<script>
+  // 定义一个Set对象
+  let set = new Set();
+  // 添加方法
+  set.add("海康");
+  set.add(2);
+  set.add(8);
+  set.add(9);
+  set.add(7);
+  // 删除方法
+  var del = set.delete("海康");
+  alert(del);
+  // 查询方法
+  var has = set.has(8);
+  alert(has);
+
+  // forEach方法用于遍历
+  set.forEach(((value, index, set) => {
+      alert(value+"\t"+index+"\t"+set);
+  }))
+
+  // 清空方法
+  set.clear();
+</script>
+</body>
+</html>

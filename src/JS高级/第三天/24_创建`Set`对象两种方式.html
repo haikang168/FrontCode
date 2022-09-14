@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>创建`Set`对象两种方式</title>
+</head>
+<body>
+<script>
+  // 创建Set对象两种方式
+  // 方式一：
+  let set1 = new Set();
+  set1.add("1");
+  alert(set1.size);// 大小为1
+
+  // 方式二：
+  let set2 = new Set([1,2,3,"海康"]);
+  alert(set2.size);// 大小为4
+</script>
+</body>
+</html>

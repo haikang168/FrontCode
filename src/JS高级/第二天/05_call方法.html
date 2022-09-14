@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>call方法</title>
+</head>
+<body>
+<script type="text/javascript">
+  // 定义function函数
+  function fun(a,b,c) {
+    console.log(this);
+    console.log("a+b+c= " +(a+b+c));
+  }
+
+  // 当直接调用时`this`代表是`window`
+  var obj = {
+    name:"海康",
+    age:22
+  };
+
+  // 这种方式调用则传入对象是谁，this就代表谁
+  fun.call(obj,1,2,3);
+</script>
+</body>
+</html>

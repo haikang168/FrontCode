@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>将类数组或可遍历对象转换为真正的数组</title>
+</head>
+<body>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+
+<script>
+  // 获取所有的div对象
+  var divs = document.getElementsByTagName("div");//返回是一个伪数组
+  // 将伪数组转成真正的数组
+  let newDivs = [...divs];//由于...divs，返回是所有div对象
+  newDivs.push("a");
+  alert(newDivs);// 将伪数组转成真正数组可以使用数组中的方法
+</script>
+
+</body>
+</html>

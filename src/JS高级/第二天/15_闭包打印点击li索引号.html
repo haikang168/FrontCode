@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包打印点击li索引号</title>
+</head>
+<body>
+<ul>
+  <li>海康</li>
+  <li>湛江</li>
+  <li>南宁</li>
+  <li>西藏</li>
+</ul>
+<script>
+  // 方式一：使用添加index号的方式
+  var lis = document.getElementsByTagName("li");
+
+  // 为每一个li绑定单击事件
+  for (let i = 0; i < lis.length; i++) {
+    // lis[i].index = i;
+    // lis[i].onclick = function () {
+    //   alert(this.index);
+    // }
+  }
+
+  // 方式二：使用闭包解决
+  // for (let i = 0; i < lis.length; i++) {
+  //   (function (i) {
+  //     lis[i].onclick = function () {
+  //       alert(i);
+  //     }
+  //   })(i);
+  // }
+
+  // 闭包应用-3秒钟之后,打印所有li元素的内容
+  for (let i = 0; i < lis.length; i++) {
+      (function (i) {
+          setTimeout(function () {
+              console.log(lis[i].innerHTML);
+          },2000)
+      })(i);
+  }
+</script>
+</body>
+</html>
